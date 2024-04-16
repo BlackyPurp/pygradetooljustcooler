@@ -191,25 +191,30 @@ class Ui_PyGradeTool(QtWidgets.QWidget):
         self.bewertung_generieren.setObjectName("bewertung_generieren")
 
         self.colorpicker_green_checkbox = QtWidgets.QRadioButton(PyGradeTool)
-        self.colorpicker_green_checkbox.setGeometry(QtCore.QRect(630, 490, 25, 25))
+        self.colorpicker_green_checkbox.setGeometry(QtCore.QRect(630, 510, 25, 25))
         self.colorpicker_green_checkbox.setObjectName("colopicker_green_checkbox")
         self.colorpicker_green_label = QtWidgets.QLabel(PyGradeTool)
-        self.colorpicker_green_label.setGeometry(QtCore.QRect(670, 492, 20, 20))
+        self.colorpicker_green_label.setGeometry(QtCore.QRect(670, 512, 20, 20))
         self.colorpicker_green_label.setObjectName("color_green_picker")
 
         self.colorpicker_blue_checkbox = QtWidgets.QRadioButton(PyGradeTool)
-        self.colorpicker_blue_checkbox.setGeometry(QtCore.QRect(630, 520, 25, 25))
+        self.colorpicker_blue_checkbox.setGeometry(QtCore.QRect(630, 540, 25, 25))
         self.colorpicker_blue_checkbox.setObjectName("colopicker_blue_checkbox")
         self.colorpicker_blue_label = QtWidgets.QLabel(PyGradeTool)
-        self.colorpicker_blue_label.setGeometry(QtCore.QRect(670, 522, 20, 20))
+        self.colorpicker_blue_label.setGeometry(QtCore.QRect(670, 542, 20, 20))
         self.colorpicker_blue_label.setObjectName("color_blue_picker")
 
         self.colorpicker_pink_checkbox = QtWidgets.QRadioButton(PyGradeTool)
-        self.colorpicker_pink_checkbox.setGeometry(QtCore.QRect(630, 550, 25, 25))
+        self.colorpicker_pink_checkbox.setGeometry(QtCore.QRect(630, 570, 25, 25))
         self.colorpicker_pink_checkbox.setObjectName("colopicker_pink_checkbox")
         self.colorpicker_pink_label = QtWidgets.QLabel(PyGradeTool)
-        self.colorpicker_pink_label.setGeometry(QtCore.QRect(670, 552, 20, 20))
+        self.colorpicker_pink_label.setGeometry(QtCore.QRect(670, 572, 20, 20))
         self.colorpicker_pink_label.setObjectName("color_pink_picker")
+
+
+        self.reset_everything = QtWidgets.QPushButton(PyGradeTool)
+        self.reset_everything.setGeometry(QtCore.QRect(630, 480, 100, 25))
+        self.reset_everything.setText("Neue Person")
 
 
         
@@ -261,6 +266,7 @@ class Ui_PyGradeTool(QtWidgets.QWidget):
         self.bewertung_generieren.raise_()
         self.compiler_fehler_checkbox.raise_()
         self.compiler_fehler_label.raise_()
+        self.reset_everything.raise_()
         self.retranslateUi(PyGradeTool)
         QtCore.QMetaObject.connectSlotsByName(PyGradeTool)
 
@@ -299,8 +305,23 @@ class Ui_PyGradeTool(QtWidgets.QWidget):
         self.bewertung_generieren.clicked.connect(self.berechne_summe)
         self.bewertung_generieren.clicked.connect(self.create_html)
         self.file_dialog.clicked.connect(self.detect_from_pdf)
+        self.reset_everything.clicked.connect(self.reset_fields)
 
 
+    def reset_fields(self):
+        self.zu_bewerten_in.setText("")
+        self.kriterium_in.setText("")
+        self.kriterium_in_2.setText("")
+        self.kriterium_in_3.setText("")
+        self.kriterium_in_4.setText("")
+        self.kriterium_in_5.setText("")
+        self.kriterium_in_6.setText("")
+        self.kriterium_in_7.setText("")
+        self.kriterium_in_8.setText("")
+        self.kommentar_in.setText("")
+        self.hinweise_in.setText("")
+        self.summe_in.setText("")
+        
     def get_color(self):
         if self.colorpicker_green_checkbox.isChecked():
             return "#009879"
