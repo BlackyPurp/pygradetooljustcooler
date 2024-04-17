@@ -298,9 +298,9 @@ class Ui_PyGradeTool(QtWidgets.QWidget):
         self.colorpicker_blue_label.setStyleSheet("""  border: 3px solid #04aed4;
                                                         border-radius: 10px; 
                                                         background-color: #04aed4""")
-        self.colorpicker_pink_label.setStyleSheet("""  border: 3px solid #fc14da;
+        self.colorpicker_pink_label.setStyleSheet("""  border: 3px solid #CB75EC;
                                                         border-radius: 10px; 
-                                                        background-color: #fc14da""")
+                                                        background-color: #CB75EC""")
         self.colorpicker_green_checkbox.setChecked(True)
         self.bewertung_generieren.clicked.connect(self.berechne_summe)
         self.bewertung_generieren.clicked.connect(self.create_html)
@@ -321,14 +321,13 @@ class Ui_PyGradeTool(QtWidgets.QWidget):
         self.kommentar_in.setText("")
         self.hinweise_in.setText("")
         self.summe_in.setText("")
-        
     def get_color(self):
         if self.colorpicker_green_checkbox.isChecked():
             return "#009879"
         if self.colorpicker_blue_checkbox.isChecked():
             return "#04aed4"
         if self.colorpicker_pink_checkbox.isChecked():
-            return "#fc14da"
+            return "#CB75EC"
 
 
     def open_file_dialog(self): 
